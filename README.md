@@ -35,7 +35,7 @@ I will be happy about it.
    ```bash
    ./appimage-update-script.sh
    ```
-
+  ---
 # Example
 
 ![example](https://github.com/yburakg/appimage-update/blob/main/Screenshot_2024-06-23_23-31-12.png)
