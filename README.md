@@ -1,4 +1,4 @@
-# appimage-update
+# APPIMAGE UPDATE
 
 You can update your AppImage files automatically with this Bash Script. 
 
