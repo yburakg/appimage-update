@@ -1,4 +1,4 @@
-# APPIMAGE UPDATE
+# AppImage Update
 
 You can update your AppImage files automatically with this Bash Script. 
 
@@ -10,7 +10,7 @@ You can support me by contributing positively, you can give me ideas to improve 
 
 I will be happy about it.
 
-## USAGE
+## Usage
 
 1. Download or Clone Repo
    
