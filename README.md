@@ -38,5 +38,5 @@ I will be happy about it.
   ---
 # Example
 
-![example](https://github.com/yburakg/appimage-update/blob/main/example.png)
+![example](https://github.com/yburakg/appimage-update/blob/main/Screenshots/example.png)
 
