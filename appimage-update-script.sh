@@ -1,4 +1,12 @@
 #!/bin/bash
+
+# my "appimage-update" script
+# -------------------------------------------
+# https://github.com/yburakg/appimage-update
+# -------------------------------------------
+# Y. Burak GÜLER - 2024
+# -------------------------------------------
+
 clear
 main_menu () {
 echo " "
