@@ -34,7 +34,7 @@ wget https://nextcloud.com/install/#install-clients
 version=`cat index.html | grep unixOS | cut -d '"' -f4`
 wget $version
 rm /home/$USER/appimages/nextcloud/Nextcloud*
-img=`ls -l | grep "Nextcloud*" | cut -d ' ' -f10`
+img=`ls -l | grep "Nextcloud*" | cut -d ' ' -f9`
 mv $img /home/$USER/appimages/nextcloud/
 rm index.html*
 }
