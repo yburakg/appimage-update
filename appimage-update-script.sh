@@ -19,10 +19,10 @@ mkdir -p /home/$USER/appimages
 cryptomator(){
 mkdir -p /home/$USER/appimages/cryptomator
 wget https://cryptomator.org/downloads/linux/thanks/
-version=`cat index.html | grep "download=" | cut -d '=' -f13`
+version=`cat index.html | grep "download=" | cut -d '=' -f13 | cut -d ' ' -f1`
 wget $version
 rm /home/$USER/appimages/cryptomator/cryptomator*
-img=`ls -l | grep "cryptomator-*" | cut -d ' ' -f10`
+img=`ls -1 | grep "cryptomator-*"`
 mv $img /home/$USER/appimages/cryptomator/
 rm index.html*
 }
@@ -30,11 +30,11 @@ rm index.html*
 nextcloud(){
 
 mkdir -p /home/$USER/appimages/nextcloud
-wget https://nextcloud.com/install/#install-clients
+wget https://nextcloud.com/install/#install-clients/
 version=`cat index.html | grep AppImage | cut -d '>' -f30 | cut -d '=' -f3 | cut -d '"' -f2`
 wget $version
 rm /home/$USER/appimages/nextcloud/Nextcloud*
-img=`ls -l | grep "Nextcloud*" | cut -d ' ' -f9`
+img=`ls -1 | grep "Nextcloud*"`
 mv $img /home/$USER/appimages/nextcloud/
 rm index.html*
 }
@@ -52,14 +52,15 @@ bleachbit(){
 }
 
 discord(){
-mkdir -p /home/$USER/appimages/discord
-curl -s --verbose https://discord.com/api/download?platform=linux | grep discord > discord.txt
-version=`cat discord.txt | cut -d '>' -f3 | cut -d '<' -f1`
-wget $version
-rm /home/$USER/appimages/discord/discord-*
-img=`ls -l | grep discord- | cut -d ':' -f2 | cut -d ' ' -f2`
-mv $img /home/$USER/appimages/discord/
-rm discord.txt
+#mkdir -p /home/$USER/appimages/discord
+#curl -s --verbose https://discord.com/api/download?platform=linux | grep discord > discord.txt
+#version=`cat discord.txt | cut -d '>' -f3 | cut -d '<' -f1`
+#wget $version
+#rm /home/$USER/appimages/discord/discord-*
+#img=`ls -l | grep discord- | cut -d ':' -f2 | cut -d ' ' -f2`
+#mv $img /home/$USER/appimages/discord/
+#rm discord.txt
+echo "discord sunucularına erişilemiyor"
 }
 
 dropbox(){
@@ -120,7 +121,7 @@ tgz=`cat download.jsp | grep linux-x64 | cut -d "'" -f2 | uniq | cut -d '/' -f9`
 version="`cat download.jsp | grep linux-x64 | cut -d "'" -f2 | uniq` -O $tgz"
 wget $version
 rm /home/$USER/appimages/sweethome3d/Sweet*
-img=`ls -l Sweet* | cut -d ':' -f2 |  cut -d ' ' -f2`
+img=`ls -1 Sweet*`
 mv $img /home/$USER/appimages/sweethome3d/
 rm download.jsp
 }
