@@ -40,11 +40,10 @@ rm index.html*
 }
 
 bleachbit(){
-    mkdir -p /home/$USER/appimages/bleachbit
+  mkdir -p /home/$USER/appimages/bleachbit
     wget https://www.bleachbit.org/download/linux -O bleachbit.txt
     deb=`cat bleachbit.txt | grep "Debian 12" | cut -d '"' -f4 | cut -d '=' -f2`
-    version="bleachbit.org`cat bleachbit.txt | grep "Debian 12" | cut -d '"' -f4` -O $deb"
-    wget $version
+    wget $deb
     rm /home/$USER/appimages/bleachbit/bleachbit_*
     img=` ls -l bleachbit_* | cut -d ':' -f2 | cut -d ' ' -f2`
     mv $img /home/$USER/appimages/bleachbit/
