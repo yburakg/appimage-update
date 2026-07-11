@@ -19,7 +19,7 @@ mkdir -p /home/$USER/appimages
 cryptomator(){
 mkdir -p /home/$USER/appimages/cryptomator
 wget https://cryptomator.org/downloads/linux/thanks/
-version=`cat index.html | grep "download=" | cut -d '=' -f13 | cut -d ' ' -f1`
+version=`cat index.html | grep "download=" | cut -d '=' -f17 | cut -d ' ' -f1`
 wget $version
 rm /home/$USER/appimages/cryptomator/cryptomator*
 img=`ls -1 | grep "cryptomator-*"`
