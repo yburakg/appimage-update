@@ -115,14 +115,17 @@ mv $img /home/$USER/appimages/steam/
 
 sweethome3d(){
 mkdir -p /home/$USER/appimages/sweethome3d
-wget http://www.sweethome3d.com/download.jsp
-tgz=`cat download.jsp | grep linux-x64 | cut -d "'" -f2 | uniq | cut -d '/' -f9`
-version="`cat download.jsp | grep linux-x64 | cut -d "'" -f2 | uniq` -O $tgz"
+#wget http://www.sweethome3d.com/download.jsp
+wget https://www.sweethome3d.com/download/
+#tgz=`cat download.jsp | grep linux-x64 | cut -d "'" -f2 | uniq | cut -d '/' -f9`
+tgz=`cat index.html | grep linux-x64 | cut -d '=' -f3 | uniq | awk {'print $1'} | cut -d '"' -f2 | cut -d '/' -f9`
+#version="`cat download.jsp | grep linux-x64 | cut -d "'" -f2 | uniq` -O $tgz"
+version="`cat index.html | grep linux-x64 | cut -d '=' -f3 | uniq | awk {'print $1'} | cut -d '"' -f2` -O $tgz"
 wget $version
 rm /home/$USER/appimages/sweethome3d/Sweet*
 img=`ls -1 Sweet*`
 mv $img /home/$USER/appimages/sweethome3d/
-rm download.jsp
+rm index.html
 }
 
 telegram(){
