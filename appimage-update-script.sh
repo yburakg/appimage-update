@@ -132,7 +132,7 @@ telegram(){
 mkdir -p /home/$USER/appimages/Telegram
 wget https://telegram.org/dl/desktop/linux -O tsetup.tar.xz
 img=`ls -l tsetup* | cut -d ':' -f2 | cut -d ' ' -f2`
-rm /home/$USER/appimages/Telegram/tsetup*
+rm -r /home/$USER/appimages/Telegram/tsetup*
 rm -r /home/$USER/appimages/Telegram/Telegram*
 mv $img /home/$USER/appimages/Telegram/
 }
