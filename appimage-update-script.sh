@@ -31,7 +31,7 @@ nextcloud(){
 
 mkdir -p /home/$USER/appimages/nextcloud
 wget https://nextcloud.com/install/#install-clients/
-version=`cat index.html | grep AppImage | cut -d '>' -f30 | cut -d '=' -f3 | cut -d '"' -f2`
+version=`cat index.html | grep AppImage | cut -d ':' -f5,6 | cut -d '=' -f4 | awk {'print $1'} | cut -d '"' -f2`
 wget $version
 rm /home/$USER/appimages/nextcloud/Nextcloud*
 img=`ls -1 | grep "Nextcloud*"`
